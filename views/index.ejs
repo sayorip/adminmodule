@@ -24,15 +24,29 @@
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js" type="text/javascript"></script>
+
+    <script>
+        
+      $.getJSON('https://manager.gimbal.com/api/communications', function (data) {
+
+var size = Object.keys(data).length;
+   // alert (size);
+
+$('div.hug').text(size);
+
+               
+    });
+
+</script>
        
 </head>
 
-<body>
+<body onload="update();">
 
 <script>
    $.getJSON('/getCoupons', function (data) {
 
-var size = Object.keys(data).length;;
+var size = Object.keys(data).length;
    // alert (size);
 
 $('div.size').text(size);
@@ -40,6 +54,8 @@ $('div.size').text(size);
                
     });
 </script>
+
+
 
 <div></div>
 
@@ -73,7 +89,7 @@ $('div.size').text(size);
                         <a href="/charts"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
                     </li>
                     <li>
-                        <a href="/tables"><i class="fa fa-fw fa-table"></i> Tables</a>
+                        <a href="/tables"><i class="fa fa-fw fa-table"></i> Sales</a>
                     </li>
                     <li>
                         <a href="/forms"><i class="fa fa-fw fa-edit"></i> Forms</a>
@@ -121,8 +137,8 @@ $('div.size').text(size);
                                         <i class="fa fa-comments fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge">1184</div>
-                                        <div>Active Customers</div>
+                                        <div class="hug">0</div>
+                                        <div>Total Communication</div>
                                     </div>
                                 </div>
                             </div>
